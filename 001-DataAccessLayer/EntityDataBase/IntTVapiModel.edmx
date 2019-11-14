@@ -1,0 +1,1001 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tvcoilModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BLOG">
+          <Key>
+            <PropertyRef Name="blogId" />
+          </Key>
+          <Property Name="blogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blogCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="blogName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="blogPublisher" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="blogContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="blogDate" Type="datetime" Nullable="false" />
+          <Property Name="blogMainPictureLink" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BLOGCOMMENT">
+          <Key>
+            <PropertyRef Name="commentId" />
+          </Key>
+          <Property Name="commentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="blogId" Type="int" Nullable="false" />
+          <Property Name="commentContent" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NEWS">
+          <Key>
+            <PropertyRef Name="newsID" />
+          </Key>
+          <Property Name="newsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="newsCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="newsGenre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="newsName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="newsDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="newsDateTime" Type="datetime" Nullable="false" />
+          <Property Name="newsMainPictureLink" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="newsVideoLink" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="newsPrefered" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROGRAM">
+          <Key>
+            <PropertyRef Name="programID" />
+          </Key>
+          <Property Name="programID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="programCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="programGenre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="programName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="programDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="programDateTime" Type="datetime" Nullable="false" />
+          <Property Name="programMainPictureLink" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="programVideoLink" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANSLATION">
+          <Key>
+            <PropertyRef Name="translationKey" />
+          </Key>
+          <Property Name="translationKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="translationEnglish" Type="nvarchar" MaxLength="50" />
+          <Property Name="translationHebrew" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__BLOGCOMME__blogI__48CFD27E">
+          <End Role="BLOG" Type="Self.BLOG" Multiplicity="1" />
+          <End Role="BLOGCOMMENT" Type="Self.BLOGCOMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BLOG">
+              <PropertyRef Name="blogId" />
+            </Principal>
+            <Dependent Role="BLOGCOMMENT">
+              <PropertyRef Name="blogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="DeleteBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="blogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteBlogComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="commentId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newsID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteProgram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="programID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteTranslation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="translationKey" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetAllBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllBlogComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllPrograms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllTranslation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetBlogById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="blogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetBlogCommentById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="commentId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetBlogCommentsByBlogId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="blogId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetNewsById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newsID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetProgramById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="programID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTranslationByKey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="translationKey" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="PostBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="blogCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="blogName" Type="nvarchar" Mode="In" />
+          <Parameter Name="blogPublisher" Type="nvarchar" Mode="In" />
+          <Parameter Name="blogContent" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="blogDate" Type="datetime" Mode="In" />
+          <Parameter Name="blogMainPictureLink" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="PostBlogComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="blogId" Type="int" Mode="In" />
+          <Parameter Name="commentContent" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="PostNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newsCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsGenre" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsName" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsDescription" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="newsMainPictureLink" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsVideoLink" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsPrefered" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="PostProgram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="programCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="programGenre" Type="nvarchar" Mode="In" />
+          <Parameter Name="programName" Type="nvarchar" Mode="In" />
+          <Parameter Name="programDescription" Type="nvarchar" Mode="In" />
+          <Parameter Name="programDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="programMainPictureLink" Type="nvarchar" Mode="In" />
+          <Parameter Name="programVideoLink" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="PostTranslation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="translationKey" Type="nvarchar" Mode="In" />
+          <Parameter Name="translationEnglish" Type="nvarchar" Mode="In" />
+          <Parameter Name="translationHebrew" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TopSixBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TopSixBlogComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TopSixNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TopSixPrograms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UpdateBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="blogId" Type="int" Mode="In" />
+          <Parameter Name="blogCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="blogName" Type="nvarchar" Mode="In" />
+          <Parameter Name="blogPublisher" Type="nvarchar" Mode="In" />
+          <Parameter Name="blogContent" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="blogDate" Type="datetime" Mode="In" />
+          <Parameter Name="blogMainPictureLink" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateBlogComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="commentId" Type="int" Mode="In" />
+          <Parameter Name="blogId" Type="int" Mode="In" />
+          <Parameter Name="commentContent" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="UpdateNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newsID" Type="int" Mode="In" />
+          <Parameter Name="newsCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsGenre" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsName" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsDescription" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="newsMainPictureLink" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsVideoLink" Type="nvarchar" Mode="In" />
+          <Parameter Name="newsPrefered" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="UpdateProgram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="programID" Type="int" Mode="In" />
+          <Parameter Name="programCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="programGenre" Type="nvarchar" Mode="In" />
+          <Parameter Name="programName" Type="nvarchar" Mode="In" />
+          <Parameter Name="programDescription" Type="nvarchar" Mode="In" />
+          <Parameter Name="programDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="programMainPictureLink" Type="nvarchar" Mode="In" />
+          <Parameter Name="programVideoLink" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateTranslation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="translationKey" Type="nvarchar" Mode="In" />
+          <Parameter Name="translationEnglish" Type="nvarchar" Mode="In" />
+          <Parameter Name="translationHebrew" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="tvcoilModelStoreContainer">
+          <EntitySet Name="BLOG" EntityType="Self.BLOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BLOGCOMMENT" EntityType="Self.BLOGCOMMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NEWS" EntityType="Self.NEWS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROGRAM" EntityType="Self.PROGRAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANSLATION" EntityType="Self.TRANSLATION" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BLOGCOMME__blogI__48CFD27E" Association="Self.FK__BLOGCOMME__blogI__48CFD27E">
+            <End Role="BLOG" EntitySet="BLOG" />
+            <End Role="BLOGCOMMENT" EntitySet="BLOGCOMMENT" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tvcoilModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BLOG">
+          <Key>
+            <PropertyRef Name="blogId" />
+          </Key>
+          <Property Name="blogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blogCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="blogName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="blogPublisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="blogContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="blogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="blogMainPictureLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BLOGCOMMENTs" Relationship="Self.FK__BLOGCOMME__blogI__48CFD27E" FromRole="BLOG" ToRole="BLOGCOMMENT" />
+        </EntityType>
+        <EntityType Name="BLOGCOMMENT">
+          <Key>
+            <PropertyRef Name="commentId" />
+          </Key>
+          <Property Name="commentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="blogId" Type="Int32" Nullable="false" />
+          <Property Name="commentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BLOG" Relationship="Self.FK__BLOGCOMME__blogI__48CFD27E" FromRole="BLOGCOMMENT" ToRole="BLOG" />
+        </EntityType>
+        <EntityType Name="NEWS">
+          <Key>
+            <PropertyRef Name="newsID" />
+          </Key>
+          <Property Name="newsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="newsCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="newsGenre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="newsName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="newsDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="newsDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="newsMainPictureLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="newsVideoLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="newsPrefered" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROGRAM">
+          <Key>
+            <PropertyRef Name="programID" />
+          </Key>
+          <Property Name="programID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="programCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="programGenre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="programName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="programDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="programDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="programMainPictureLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="programVideoLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TRANSLATION">
+          <Key>
+            <PropertyRef Name="translationKey" />
+          </Key>
+          <Property Name="translationKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="translationEnglish" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="translationHebrew" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__BLOGCOMME__blogI__48CFD27E">
+          <End Role="BLOG" Type="Self.BLOG" Multiplicity="1" />
+          <End Role="BLOGCOMMENT" Type="Self.BLOGCOMMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BLOG">
+              <PropertyRef Name="blogId" />
+            </Principal>
+            <Dependent Role="BLOGCOMMENT">
+              <PropertyRef Name="blogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tvcoilEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BLOGs" EntityType="Self.BLOG" />
+          <EntitySet Name="BLOGCOMMENTs" EntityType="Self.BLOGCOMMENT" />
+          <EntitySet Name="NEWS" EntityType="Self.NEWS" />
+          <EntitySet Name="PROGRAMs" EntityType="Self.PROGRAM" />
+          <EntitySet Name="TRANSLATIONs" EntityType="Self.TRANSLATION" />
+          <AssociationSet Name="FK__BLOGCOMME__blogI__48CFD27E" Association="Self.FK__BLOGCOMME__blogI__48CFD27E">
+            <End Role="BLOG" EntitySet="BLOGs" />
+            <End Role="BLOGCOMMENT" EntitySet="BLOGCOMMENTs" />
+          </AssociationSet>
+          <FunctionImport Name="DeleteBlog">
+            <Parameter Name="blogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteBlogComment">
+            <Parameter Name="commentId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteNews">
+            <Parameter Name="newsID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteProgram">
+            <Parameter Name="programID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteTranslation">
+            <Parameter Name="translationKey" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllBlog" ReturnType="Collection(tvcoilModel.GetAllBlog_Result)" />
+          <FunctionImport Name="GetAllBlogComment" ReturnType="Collection(tvcoilModel.GetAllBlogComment_Result)" />
+          <FunctionImport Name="GetAllNews" ReturnType="Collection(tvcoilModel.GetAllNews_Result)" />
+          <FunctionImport Name="GetAllPrograms" ReturnType="Collection(tvcoilModel.GetAllPrograms_Result)" />
+          <FunctionImport Name="GetAllTranslation" ReturnType="Collection(tvcoilModel.GetAllTranslation_Result)" />
+          <FunctionImport Name="GetBlogById" ReturnType="Collection(tvcoilModel.GetBlogById_Result)">
+            <Parameter Name="blogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetBlogCommentById" ReturnType="Collection(tvcoilModel.GetBlogCommentById_Result)">
+            <Parameter Name="commentId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetBlogCommentsByBlogId" ReturnType="Collection(tvcoilModel.GetBlogCommentsByBlogId_Result)">
+            <Parameter Name="blogId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetNewsById" ReturnType="Collection(tvcoilModel.GetNewsById_Result)">
+            <Parameter Name="newsID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetProgramById" ReturnType="Collection(tvcoilModel.GetProgramById_Result)">
+            <Parameter Name="programID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetTranslationByKey" ReturnType="Collection(tvcoilModel.GetTranslationByKey_Result)">
+            <Parameter Name="translationKey" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PostBlog" ReturnType="Collection(tvcoilModel.PostBlog_Result)">
+            <Parameter Name="blogCategory" Mode="In" Type="String" />
+            <Parameter Name="blogName" Mode="In" Type="String" />
+            <Parameter Name="blogPublisher" Mode="In" Type="String" />
+            <Parameter Name="blogContent" Mode="In" Type="String" />
+            <Parameter Name="blogDate" Mode="In" Type="DateTime" />
+            <Parameter Name="blogMainPictureLink" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PostBlogComment" ReturnType="Collection(tvcoilModel.PostBlogComment_Result)">
+            <Parameter Name="blogId" Mode="In" Type="Int32" />
+            <Parameter Name="commentContent" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PostNews" ReturnType="Collection(tvcoilModel.PostNews_Result)">
+            <Parameter Name="newsCategory" Mode="In" Type="String" />
+            <Parameter Name="newsGenre" Mode="In" Type="String" />
+            <Parameter Name="newsName" Mode="In" Type="String" />
+            <Parameter Name="newsDescription" Mode="In" Type="String" />
+            <Parameter Name="newsDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="newsMainPictureLink" Mode="In" Type="String" />
+            <Parameter Name="newsVideoLink" Mode="In" Type="String" />
+            <Parameter Name="newsPrefered" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="PostProgram" ReturnType="Collection(tvcoilModel.PostProgram_Result)">
+            <Parameter Name="programCategory" Mode="In" Type="String" />
+            <Parameter Name="programGenre" Mode="In" Type="String" />
+            <Parameter Name="programName" Mode="In" Type="String" />
+            <Parameter Name="programDescription" Mode="In" Type="String" />
+            <Parameter Name="programDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="programMainPictureLink" Mode="In" Type="String" />
+            <Parameter Name="programVideoLink" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PostTranslation" ReturnType="Collection(tvcoilModel.PostTranslation_Result)">
+            <Parameter Name="translationKey" Mode="In" Type="String" />
+            <Parameter Name="translationEnglish" Mode="In" Type="String" />
+            <Parameter Name="translationHebrew" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TopSixBlog" ReturnType="Collection(tvcoilModel.TopSixBlog_Result)" />
+          <FunctionImport Name="TopSixBlogComment" ReturnType="Collection(tvcoilModel.TopSixBlogComment_Result)" />
+          <FunctionImport Name="TopSixNews" ReturnType="Collection(tvcoilModel.TopSixNews_Result)" />
+          <FunctionImport Name="TopSixPrograms" ReturnType="Collection(tvcoilModel.TopSixPrograms_Result)" />
+          <FunctionImport Name="UpdateBlog" ReturnType="Collection(tvcoilModel.UpdateBlog_Result)">
+            <Parameter Name="blogId" Mode="In" Type="Int32" />
+            <Parameter Name="blogCategory" Mode="In" Type="String" />
+            <Parameter Name="blogName" Mode="In" Type="String" />
+            <Parameter Name="blogPublisher" Mode="In" Type="String" />
+            <Parameter Name="blogContent" Mode="In" Type="String" />
+            <Parameter Name="blogDate" Mode="In" Type="DateTime" />
+            <Parameter Name="blogMainPictureLink" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateBlogComment" ReturnType="Collection(tvcoilModel.UpdateBlogComment_Result)">
+            <Parameter Name="commentId" Mode="In" Type="Int32" />
+            <Parameter Name="blogId" Mode="In" Type="Int32" />
+            <Parameter Name="commentContent" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateNews" ReturnType="Collection(tvcoilModel.UpdateNews_Result)">
+            <Parameter Name="newsID" Mode="In" Type="Int32" />
+            <Parameter Name="newsCategory" Mode="In" Type="String" />
+            <Parameter Name="newsGenre" Mode="In" Type="String" />
+            <Parameter Name="newsName" Mode="In" Type="String" />
+            <Parameter Name="newsDescription" Mode="In" Type="String" />
+            <Parameter Name="newsDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="newsMainPictureLink" Mode="In" Type="String" />
+            <Parameter Name="newsVideoLink" Mode="In" Type="String" />
+            <Parameter Name="newsPrefered" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateProgram" ReturnType="Collection(tvcoilModel.UpdateProgram_Result)">
+            <Parameter Name="programID" Mode="In" Type="Int32" />
+            <Parameter Name="programCategory" Mode="In" Type="String" />
+            <Parameter Name="programGenre" Mode="In" Type="String" />
+            <Parameter Name="programName" Mode="In" Type="String" />
+            <Parameter Name="programDescription" Mode="In" Type="String" />
+            <Parameter Name="programDateTime" Mode="In" Type="DateTime" />
+            <Parameter Name="programMainPictureLink" Mode="In" Type="String" />
+            <Parameter Name="programVideoLink" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateTranslation" ReturnType="Collection(tvcoilModel.UpdateTranslation_Result)">
+            <Parameter Name="translationKey" Mode="In" Type="String" />
+            <Parameter Name="translationEnglish" Mode="In" Type="String" />
+            <Parameter Name="translationHebrew" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetAllBlog_Result">
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="blogCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogPublisher" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogContent" Nullable="false" />
+          <Property Type="DateTime" Name="blogDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="blogMainPictureLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllBlogComment_Result">
+          <Property Type="Int32" Name="commentId" Nullable="false" />
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="commentContent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetAllNews_Result">
+          <Property Type="Int32" Name="newsID" Nullable="false" />
+          <Property Type="String" Name="newsCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="newsDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="newsMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsVideoLink" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="newsPrefered" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetAllPrograms_Result">
+          <Property Type="Int32" Name="programID" Nullable="false" />
+          <Property Type="String" Name="programCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="programDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="programMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programVideoLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetAllTranslation_Result">
+          <Property Type="String" Name="translationKey" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="translationEnglish" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="translationHebrew" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetBlogById_Result">
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="blogCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogPublisher" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogContent" Nullable="false" />
+          <Property Type="DateTime" Name="blogDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="blogMainPictureLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetBlogCommentById_Result">
+          <Property Type="Int32" Name="commentId" Nullable="false" />
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="commentContent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetBlogCommentsByBlogId_Result">
+          <Property Type="Int32" Name="commentId" Nullable="false" />
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="commentContent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetNewsById_Result">
+          <Property Type="Int32" Name="newsID" Nullable="false" />
+          <Property Type="String" Name="newsCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="newsDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="newsMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsVideoLink" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="newsPrefered" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetProgramById_Result">
+          <Property Type="Int32" Name="programID" Nullable="false" />
+          <Property Type="String" Name="programCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="programDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="programMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programVideoLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetTranslationByKey_Result">
+          <Property Type="String" Name="translationKey" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="translationEnglish" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="translationHebrew" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="PostBlog_Result">
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="blogCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogPublisher" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogContent" Nullable="false" />
+          <Property Type="DateTime" Name="blogDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="blogMainPictureLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="PostBlogComment_Result">
+          <Property Type="Int32" Name="commentId" Nullable="false" />
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="commentContent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="PostNews_Result">
+          <Property Type="Int32" Name="newsID" Nullable="false" />
+          <Property Type="String" Name="newsCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="newsDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="newsMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsVideoLink" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="newsPrefered" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="PostProgram_Result">
+          <Property Type="Int32" Name="programID" Nullable="false" />
+          <Property Type="String" Name="programCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="programDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="programMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programVideoLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="PostTranslation_Result">
+          <Property Type="String" Name="translationKey" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="translationEnglish" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="translationHebrew" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="TopSixBlog_Result">
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="blogCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogPublisher" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogContent" Nullable="false" />
+          <Property Type="DateTime" Name="blogDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="blogMainPictureLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="TopSixBlogComment_Result">
+          <Property Type="Int32" Name="commentId" Nullable="false" />
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="commentContent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TopSixNews_Result">
+          <Property Type="Int32" Name="newsID" Nullable="false" />
+          <Property Type="String" Name="newsCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="newsDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="newsMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsVideoLink" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="newsPrefered" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TopSixPrograms_Result">
+          <Property Type="Int32" Name="programID" Nullable="false" />
+          <Property Type="String" Name="programCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="programDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="programMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programVideoLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="UpdateBlog_Result">
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="blogCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogPublisher" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="blogContent" Nullable="false" />
+          <Property Type="DateTime" Name="blogDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="blogMainPictureLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="UpdateBlogComment_Result">
+          <Property Type="Int32" Name="commentId" Nullable="false" />
+          <Property Type="Int32" Name="blogId" Nullable="false" />
+          <Property Type="String" Name="commentContent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="UpdateNews_Result">
+          <Property Type="Int32" Name="newsID" Nullable="false" />
+          <Property Type="String" Name="newsCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="newsDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="newsMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="newsVideoLink" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="newsPrefered" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="UpdateProgram_Result">
+          <Property Type="Int32" Name="programID" Nullable="false" />
+          <Property Type="String" Name="programCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programGenre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programDescription" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="programDateTime" Nullable="false" Precision="23" />
+          <Property Type="String" Name="programMainPictureLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="programVideoLink" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="UpdateTranslation_Result">
+          <Property Type="String" Name="translationKey" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="translationEnglish" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="translationHebrew" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tvcoilModelStoreContainer" CdmEntityContainer="tvcoilEntities">
+          <EntitySetMapping Name="BLOGs">
+            <EntityTypeMapping TypeName="tvcoilModel.BLOG">
+              <MappingFragment StoreEntitySet="BLOG">
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="blogCategory" ColumnName="blogCategory" />
+                <ScalarProperty Name="blogName" ColumnName="blogName" />
+                <ScalarProperty Name="blogPublisher" ColumnName="blogPublisher" />
+                <ScalarProperty Name="blogContent" ColumnName="blogContent" />
+                <ScalarProperty Name="blogDate" ColumnName="blogDate" />
+                <ScalarProperty Name="blogMainPictureLink" ColumnName="blogMainPictureLink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BLOGCOMMENTs">
+            <EntityTypeMapping TypeName="tvcoilModel.BLOGCOMMENT">
+              <MappingFragment StoreEntitySet="BLOGCOMMENT">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEWS">
+            <EntityTypeMapping TypeName="tvcoilModel.NEWS">
+              <MappingFragment StoreEntitySet="NEWS">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsCategory" ColumnName="newsCategory" />
+                <ScalarProperty Name="newsGenre" ColumnName="newsGenre" />
+                <ScalarProperty Name="newsName" ColumnName="newsName" />
+                <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+                <ScalarProperty Name="newsDateTime" ColumnName="newsDateTime" />
+                <ScalarProperty Name="newsMainPictureLink" ColumnName="newsMainPictureLink" />
+                <ScalarProperty Name="newsVideoLink" ColumnName="newsVideoLink" />
+                <ScalarProperty Name="newsPrefered" ColumnName="newsPrefered" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROGRAMs">
+            <EntityTypeMapping TypeName="tvcoilModel.PROGRAM">
+              <MappingFragment StoreEntitySet="PROGRAM">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="programCategory" ColumnName="programCategory" />
+                <ScalarProperty Name="programGenre" ColumnName="programGenre" />
+                <ScalarProperty Name="programName" ColumnName="programName" />
+                <ScalarProperty Name="programDescription" ColumnName="programDescription" />
+                <ScalarProperty Name="programDateTime" ColumnName="programDateTime" />
+                <ScalarProperty Name="programMainPictureLink" ColumnName="programMainPictureLink" />
+                <ScalarProperty Name="programVideoLink" ColumnName="programVideoLink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSLATIONs">
+            <EntityTypeMapping TypeName="tvcoilModel.TRANSLATION">
+              <MappingFragment StoreEntitySet="TRANSLATION">
+                <ScalarProperty Name="translationKey" ColumnName="translationKey" />
+                <ScalarProperty Name="translationEnglish" ColumnName="translationEnglish" />
+                <ScalarProperty Name="translationHebrew" ColumnName="translationHebrew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteBlog" FunctionName="tvcoilModel.Store.DeleteBlog" />
+          <FunctionImportMapping FunctionImportName="DeleteBlogComment" FunctionName="tvcoilModel.Store.DeleteBlogComment" />
+          <FunctionImportMapping FunctionImportName="DeleteNews" FunctionName="tvcoilModel.Store.DeleteNews" />
+          <FunctionImportMapping FunctionImportName="DeleteProgram" FunctionName="tvcoilModel.Store.DeleteProgram" />
+          <FunctionImportMapping FunctionImportName="DeleteTranslation" FunctionName="tvcoilModel.Store.DeleteTranslation" />
+          <FunctionImportMapping FunctionImportName="GetAllBlog" FunctionName="tvcoilModel.Store.GetAllBlog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetAllBlog_Result">
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="blogCategory" ColumnName="blogCategory" />
+                <ScalarProperty Name="blogName" ColumnName="blogName" />
+                <ScalarProperty Name="blogPublisher" ColumnName="blogPublisher" />
+                <ScalarProperty Name="blogContent" ColumnName="blogContent" />
+                <ScalarProperty Name="blogDate" ColumnName="blogDate" />
+                <ScalarProperty Name="blogMainPictureLink" ColumnName="blogMainPictureLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllBlogComment" FunctionName="tvcoilModel.Store.GetAllBlogComment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetAllBlogComment_Result">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllNews" FunctionName="tvcoilModel.Store.GetAllNews">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetAllNews_Result">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsCategory" ColumnName="newsCategory" />
+                <ScalarProperty Name="newsGenre" ColumnName="newsGenre" />
+                <ScalarProperty Name="newsName" ColumnName="newsName" />
+                <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+                <ScalarProperty Name="newsDateTime" ColumnName="newsDateTime" />
+                <ScalarProperty Name="newsMainPictureLink" ColumnName="newsMainPictureLink" />
+                <ScalarProperty Name="newsVideoLink" ColumnName="newsVideoLink" />
+                <ScalarProperty Name="newsPrefered" ColumnName="newsPrefered" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllPrograms" FunctionName="tvcoilModel.Store.GetAllPrograms">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetAllPrograms_Result">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="programCategory" ColumnName="programCategory" />
+                <ScalarProperty Name="programGenre" ColumnName="programGenre" />
+                <ScalarProperty Name="programName" ColumnName="programName" />
+                <ScalarProperty Name="programDescription" ColumnName="programDescription" />
+                <ScalarProperty Name="programDateTime" ColumnName="programDateTime" />
+                <ScalarProperty Name="programMainPictureLink" ColumnName="programMainPictureLink" />
+                <ScalarProperty Name="programVideoLink" ColumnName="programVideoLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllTranslation" FunctionName="tvcoilModel.Store.GetAllTranslation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetAllTranslation_Result">
+                <ScalarProperty Name="translationKey" ColumnName="translationKey" />
+                <ScalarProperty Name="translationEnglish" ColumnName="translationEnglish" />
+                <ScalarProperty Name="translationHebrew" ColumnName="translationHebrew" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBlogById" FunctionName="tvcoilModel.Store.GetBlogById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetBlogById_Result">
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="blogCategory" ColumnName="blogCategory" />
+                <ScalarProperty Name="blogName" ColumnName="blogName" />
+                <ScalarProperty Name="blogPublisher" ColumnName="blogPublisher" />
+                <ScalarProperty Name="blogContent" ColumnName="blogContent" />
+                <ScalarProperty Name="blogDate" ColumnName="blogDate" />
+                <ScalarProperty Name="blogMainPictureLink" ColumnName="blogMainPictureLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBlogCommentById" FunctionName="tvcoilModel.Store.GetBlogCommentById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetBlogCommentById_Result">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBlogCommentsByBlogId" FunctionName="tvcoilModel.Store.GetBlogCommentsByBlogId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetBlogCommentsByBlogId_Result">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetNewsById" FunctionName="tvcoilModel.Store.GetNewsById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetNewsById_Result">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsCategory" ColumnName="newsCategory" />
+                <ScalarProperty Name="newsGenre" ColumnName="newsGenre" />
+                <ScalarProperty Name="newsName" ColumnName="newsName" />
+                <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+                <ScalarProperty Name="newsDateTime" ColumnName="newsDateTime" />
+                <ScalarProperty Name="newsMainPictureLink" ColumnName="newsMainPictureLink" />
+                <ScalarProperty Name="newsVideoLink" ColumnName="newsVideoLink" />
+                <ScalarProperty Name="newsPrefered" ColumnName="newsPrefered" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetProgramById" FunctionName="tvcoilModel.Store.GetProgramById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetProgramById_Result">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="programCategory" ColumnName="programCategory" />
+                <ScalarProperty Name="programGenre" ColumnName="programGenre" />
+                <ScalarProperty Name="programName" ColumnName="programName" />
+                <ScalarProperty Name="programDescription" ColumnName="programDescription" />
+                <ScalarProperty Name="programDateTime" ColumnName="programDateTime" />
+                <ScalarProperty Name="programMainPictureLink" ColumnName="programMainPictureLink" />
+                <ScalarProperty Name="programVideoLink" ColumnName="programVideoLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTranslationByKey" FunctionName="tvcoilModel.Store.GetTranslationByKey">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.GetTranslationByKey_Result">
+                <ScalarProperty Name="translationKey" ColumnName="translationKey" />
+                <ScalarProperty Name="translationEnglish" ColumnName="translationEnglish" />
+                <ScalarProperty Name="translationHebrew" ColumnName="translationHebrew" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PostBlog" FunctionName="tvcoilModel.Store.PostBlog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.PostBlog_Result">
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="blogCategory" ColumnName="blogCategory" />
+                <ScalarProperty Name="blogName" ColumnName="blogName" />
+                <ScalarProperty Name="blogPublisher" ColumnName="blogPublisher" />
+                <ScalarProperty Name="blogContent" ColumnName="blogContent" />
+                <ScalarProperty Name="blogDate" ColumnName="blogDate" />
+                <ScalarProperty Name="blogMainPictureLink" ColumnName="blogMainPictureLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PostBlogComment" FunctionName="tvcoilModel.Store.PostBlogComment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.PostBlogComment_Result">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PostNews" FunctionName="tvcoilModel.Store.PostNews">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.PostNews_Result">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsCategory" ColumnName="newsCategory" />
+                <ScalarProperty Name="newsGenre" ColumnName="newsGenre" />
+                <ScalarProperty Name="newsName" ColumnName="newsName" />
+                <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+                <ScalarProperty Name="newsDateTime" ColumnName="newsDateTime" />
+                <ScalarProperty Name="newsMainPictureLink" ColumnName="newsMainPictureLink" />
+                <ScalarProperty Name="newsVideoLink" ColumnName="newsVideoLink" />
+                <ScalarProperty Name="newsPrefered" ColumnName="newsPrefered" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PostProgram" FunctionName="tvcoilModel.Store.PostProgram">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.PostProgram_Result">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="programCategory" ColumnName="programCategory" />
+                <ScalarProperty Name="programGenre" ColumnName="programGenre" />
+                <ScalarProperty Name="programName" ColumnName="programName" />
+                <ScalarProperty Name="programDescription" ColumnName="programDescription" />
+                <ScalarProperty Name="programDateTime" ColumnName="programDateTime" />
+                <ScalarProperty Name="programMainPictureLink" ColumnName="programMainPictureLink" />
+                <ScalarProperty Name="programVideoLink" ColumnName="programVideoLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PostTranslation" FunctionName="tvcoilModel.Store.PostTranslation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.PostTranslation_Result">
+                <ScalarProperty Name="translationKey" ColumnName="translationKey" />
+                <ScalarProperty Name="translationEnglish" ColumnName="translationEnglish" />
+                <ScalarProperty Name="translationHebrew" ColumnName="translationHebrew" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TopSixBlog" FunctionName="tvcoilModel.Store.TopSixBlog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.TopSixBlog_Result">
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="blogCategory" ColumnName="blogCategory" />
+                <ScalarProperty Name="blogName" ColumnName="blogName" />
+                <ScalarProperty Name="blogPublisher" ColumnName="blogPublisher" />
+                <ScalarProperty Name="blogContent" ColumnName="blogContent" />
+                <ScalarProperty Name="blogDate" ColumnName="blogDate" />
+                <ScalarProperty Name="blogMainPictureLink" ColumnName="blogMainPictureLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TopSixBlogComment" FunctionName="tvcoilModel.Store.TopSixBlogComment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.TopSixBlogComment_Result">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TopSixNews" FunctionName="tvcoilModel.Store.TopSixNews">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.TopSixNews_Result">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsCategory" ColumnName="newsCategory" />
+                <ScalarProperty Name="newsGenre" ColumnName="newsGenre" />
+                <ScalarProperty Name="newsName" ColumnName="newsName" />
+                <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+                <ScalarProperty Name="newsDateTime" ColumnName="newsDateTime" />
+                <ScalarProperty Name="newsMainPictureLink" ColumnName="newsMainPictureLink" />
+                <ScalarProperty Name="newsVideoLink" ColumnName="newsVideoLink" />
+                <ScalarProperty Name="newsPrefered" ColumnName="newsPrefered" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TopSixPrograms" FunctionName="tvcoilModel.Store.TopSixPrograms">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.TopSixPrograms_Result">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="programCategory" ColumnName="programCategory" />
+                <ScalarProperty Name="programGenre" ColumnName="programGenre" />
+                <ScalarProperty Name="programName" ColumnName="programName" />
+                <ScalarProperty Name="programDescription" ColumnName="programDescription" />
+                <ScalarProperty Name="programDateTime" ColumnName="programDateTime" />
+                <ScalarProperty Name="programMainPictureLink" ColumnName="programMainPictureLink" />
+                <ScalarProperty Name="programVideoLink" ColumnName="programVideoLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateBlog" FunctionName="tvcoilModel.Store.UpdateBlog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.UpdateBlog_Result">
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="blogCategory" ColumnName="blogCategory" />
+                <ScalarProperty Name="blogName" ColumnName="blogName" />
+                <ScalarProperty Name="blogPublisher" ColumnName="blogPublisher" />
+                <ScalarProperty Name="blogContent" ColumnName="blogContent" />
+                <ScalarProperty Name="blogDate" ColumnName="blogDate" />
+                <ScalarProperty Name="blogMainPictureLink" ColumnName="blogMainPictureLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateBlogComment" FunctionName="tvcoilModel.Store.UpdateBlogComment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.UpdateBlogComment_Result">
+                <ScalarProperty Name="commentId" ColumnName="commentId" />
+                <ScalarProperty Name="blogId" ColumnName="blogId" />
+                <ScalarProperty Name="commentContent" ColumnName="commentContent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateNews" FunctionName="tvcoilModel.Store.UpdateNews">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.UpdateNews_Result">
+                <ScalarProperty Name="newsID" ColumnName="newsID" />
+                <ScalarProperty Name="newsCategory" ColumnName="newsCategory" />
+                <ScalarProperty Name="newsGenre" ColumnName="newsGenre" />
+                <ScalarProperty Name="newsName" ColumnName="newsName" />
+                <ScalarProperty Name="newsDescription" ColumnName="newsDescription" />
+                <ScalarProperty Name="newsDateTime" ColumnName="newsDateTime" />
+                <ScalarProperty Name="newsMainPictureLink" ColumnName="newsMainPictureLink" />
+                <ScalarProperty Name="newsVideoLink" ColumnName="newsVideoLink" />
+                <ScalarProperty Name="newsPrefered" ColumnName="newsPrefered" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateProgram" FunctionName="tvcoilModel.Store.UpdateProgram">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.UpdateProgram_Result">
+                <ScalarProperty Name="programID" ColumnName="programID" />
+                <ScalarProperty Name="programCategory" ColumnName="programCategory" />
+                <ScalarProperty Name="programGenre" ColumnName="programGenre" />
+                <ScalarProperty Name="programName" ColumnName="programName" />
+                <ScalarProperty Name="programDescription" ColumnName="programDescription" />
+                <ScalarProperty Name="programDateTime" ColumnName="programDateTime" />
+                <ScalarProperty Name="programMainPictureLink" ColumnName="programMainPictureLink" />
+                <ScalarProperty Name="programVideoLink" ColumnName="programVideoLink" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UpdateTranslation" FunctionName="tvcoilModel.Store.UpdateTranslation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tvcoilModel.UpdateTranslation_Result">
+                <ScalarProperty Name="translationKey" ColumnName="translationKey" />
+                <ScalarProperty Name="translationEnglish" ColumnName="translationEnglish" />
+                <ScalarProperty Name="translationHebrew" ColumnName="translationHebrew" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

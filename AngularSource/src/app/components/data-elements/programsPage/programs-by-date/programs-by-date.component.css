@@ -1,0 +1,141 @@
+.programs_by_date{
+	float:left;
+	max-width:685px;
+}
+
+
+.browse_by_data_list_div {
+	width:100%;
+	float:left;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .28);
+}
+
+.browse_by_data_list_div .day_mounth_year input{
+	width:110px;
+	height:35px;
+	margin-left:35px;
+	margin-right:45px;
+	margin-top:25px;
+	border-style: solid;
+    border-width: 2px;
+	border-color:#EAEAEA;
+	box-shadow: inset 0px 0px 5px #888888;
+	text-align:center;
+	
+}
+
+.day_mounth_year{
+	width:100%;
+	float:left;
+}
+
+
+
+
+.about_program{
+	margin-bottom:50px;
+	margin-top:50px;
+	float:right;
+    width:100%;
+}
+
+
+
+
+
+.about_program_show{
+    margin: 0;
+
+    /* border-style: groove;
+    border-color: coral;
+    border-width: 1px; */
+
+	color:#E5E5E5;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	font-family: FbAdrenalinRegular;
+	font-size:17pt;
+}
+
+
+
+.text .about_program_title a{
+	color:#fff;
+	text-shadow:0 0 0.3em #7F7F7F, 0 0 0.3em #7F7F7F;
+	font-family: FbAdrenalinRegular;
+	font-size:17pt;
+	text-decoration:underline;
+	transition: color .25s ease-in-out;
+   -moz-transition: color .25s ease-in-out;
+   -webkit-transition: color .25s ease-in-out;
+}
+
+.text .about_program_title a:hover { 
+    color:#eee;
+}
+
+
+
+
+
+
+
+
+.about_program_text
+{
+	color:#fff;
+	text-shadow:0 0 0.1em #7F7F7F, 0 0 0.1em #7F7F7F;
+	font-family: FbAdrenalinRegular;
+	font-size:10pt;
+	line-height: 140%;
+}
+
+
+
+
+
+
+
+
+
+
+.picture{
+	float:right;
+	width:230px;
+	height:230px;
+	border-style: solid;
+    border-width: 2px;
+	border-color:#EAEAEA;
+	margin-left:15px;
+	box-shadow: inset 0px 0px 10px #888888;
+	opacity:0.8;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   	background-position: 30% 20%; 
+}
+
+.picture:hover{
+	opacity:1;
+}
+
+.text{
+	float:right;
+	width:230px;
+	height:230px;
+	margin-left:15px;
+}
+
+.time{
+	float:left;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .20);
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	font-family: FbAdrenalinRegular;
+    font-size:16pt;
+    text-align:center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width:133px;
+}

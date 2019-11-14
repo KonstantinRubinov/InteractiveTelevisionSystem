@@ -1,0 +1,22 @@
+<div class="watch_tonight">
+    
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{watch_tonight_title}}</p>
+    </div>
+
+    
+    
+    <div class="watch_tonight_bottom" *ngFor="let watch_tonight_bottom of watch_tonight_bottom_array">
+      <p class="watch_tonight_bottom_time bold-big-text-h" id="watch_tonight_bottom_time1">{{watch_tonight_bottom.time}}</p>
+      <p class="watch_tonight_bottom_text simple-text-h" id="watch_tonight_bottom_text1">{{watch_tonight_bottom.text}}</p>
+    </div>
+    
+    
+    <div class="watch_tonight_arrows">
+      <div class="right_button" (click)="changeTextRight()"></div>
+      <div class="and"></div>
+      <div class="left_button" (click)="changeTextLeft()"></div>
+    </div>
+    
+</div>

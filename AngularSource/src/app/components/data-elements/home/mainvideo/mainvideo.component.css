@@ -1,0 +1,214 @@
+.main_video{
+	text-align:center;
+	width:100%;
+    padding-right:60px;
+}
+
+
+tr, td{
+	padding: 0;
+	margin: 0;
+}
+
+.table_item{
+	float:right;
+	margin-bottom:10px;
+}
+
+table {
+	float:right;
+	direction:rtl;
+	
+}
+
+.welcome_text{
+    width: 90%;
+	text-align:right;
+	line-height: 140%;
+	float:right;
+	font-family: FbAdrenalinRegular;
+	color:#848484;
+	font-size:12pt;
+	margin:0px;
+	padding:0px;
+	margin-bottom:30px;
+}
+
+.welcome_first{
+	font-size:16pt;
+}
+
+.text_in_table{
+	text-align:center;
+	color:#EAEAEA;
+	text-shadow:0 0 0.3em #7F7F7F, 0 0 0.3em #7F7F7F;
+	font-size:13pt;
+	font-family: FbAdrenalinRegular;
+	text-decoration:underline;
+	width:100px;
+	transition: color .25s ease-in-out, text-shadow .25s ease-in-out;
+   -moz-transition: color .25s ease-in-out, text-shadow .25s ease-in-out;
+   -webkit-transition: color .25s ease-in-out, text-shadow .25s ease-in-out;
+}
+
+.text_in_table:hover{
+	color:#EAEAEA;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	cursor:pointer;
+}
+
+
+.text_in_table:active{
+	text-align:center;
+	color:#7F7F7F;
+	text-shadow:0 0 0 #7F7F7F, 0 0 0 #7F7F7F;
+}
+
+
+#bicon1 {
+	background-image: url('../../../../../assets/images/icon_sport.png');
+}
+
+#bicon1:hover{
+	background-image: url('../../../../../assets/images/icon_sport_hover.png');
+}
+
+#bicon1:active{
+	background-image: url('../../../../../assets/images/icon_sport_active.png');
+}
+
+#bicon2 {
+	background-image: url('../../../../../assets/images/icon_music.png');
+}
+
+#bicon2:hover{
+	background-image: url('../../../../../assets/images/icon_music_hover.png');
+}
+
+#bicon2:active{
+	background-image: url('../../../../../assets/images/icon_music_active.png');
+}
+
+#bicon3 {
+	background-image: url('../../../../../assets/images/icon_video.png');
+}
+
+#bicon3:hover{
+	background-image: url('../../../../../assets/images/icon_video_hover.png');
+}
+
+#bicon3:active{
+	background-image: url('../../../../../assets/images/icon_video_active.png');
+}
+
+#bicon4 {
+	background-image: url('../../../../../assets/images/icon_education.png');
+}
+
+#bicon4:hover{
+	background-image: url('../../../../../assets/images/icon_education_hover.png');
+}
+
+#bicon4:active{
+	background-image: url('../../../../../assets/images/icon_education_active.png');
+}
+
+#bicon5 {
+	background-image: url('../../../../../assets/images/icon_game.png');
+}
+
+#bicon5:hover{
+	background-image: url('../../../../../assets/images/icon_game_hover.png');
+}
+
+#bicon5:active{
+	background-image: url('../../../../../assets/images/icon_game_active.png');
+}
+
+#bicon6 {
+	background-image: url('../../../../../assets/images/icon_talkshow.png');
+}
+
+#bicon6:hover{
+	background-image: url('../../../../../assets/images/icon_talkshow_hover.png');
+}
+
+#bicon6:active{
+	background-image: url('../../../../../assets/images/icon_talkshow_active.png');
+}
+
+#bicon7 {
+	background-image: url('../../../../../assets/images/icon_analitics.png');
+}
+
+#bicon7:hover{
+	background-image: url('../../../../../assets/images/icon_analitics_hover.png');
+}
+
+#bicon7:active{
+	background-image: url('../../../../../assets/images/icon_analitics_active.png');
+}
+
+.bicon {
+    margin: 0;
+    pad: 0;
+	border-top: 2px solid #E5E5E6;
+	border-bottom: 2px solid #E5E5E6;
+	border-left: 4px solid #E5E5E6;
+	border-right: 4px solid #E5E5E6;
+	box-shadow: 4px 4px 8px #888888, inset 4px 4px 8px #888888;
+	width:80px;
+	height:80px;
+	background-position: 25% 25%;
+	cursor:pointer;
+	transition: background-image .25s ease-in-out;
+   -moz-transition: background-image .25s ease-in-out;
+   -webkit-transition: background-image .25s ease-in-out;
+}
+
+
+.full_monitor{
+	float:left;
+	text-align:center;
+	margin-bottom:30px;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+
+
+
+
+.monitor{
+	max-width:720px;
+	max-height:409px;
+	border-style: solid;
+    border-width: 5px;
+	border-color: #E5E5E6;
+	border-radius: 10px;
+	box-shadow: 4px 4px 8px 0px #888888, inset 5px 5px 0px 0px #888888;
+	position:relative;
+	z-index:999;
+}
+
+.bottom_monitor{
+	width:180px;
+	height:47px;
+	border-style: solid;
+    border-width: 2px;
+	border-color: #E5E5E6;
+	border-radius: 5px;
+	margin: auto;
+	box-shadow: 3px 3px 8px 0px #888888, inset 3px 3px 8px 0px #888888;
+	padding-top:10px;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .10);
+	position:relative;
+	z-index:0;
+	margin-top:-5px;
+}
+
+#video_content{
+    display: flex;
+    direction: rtl;
+}

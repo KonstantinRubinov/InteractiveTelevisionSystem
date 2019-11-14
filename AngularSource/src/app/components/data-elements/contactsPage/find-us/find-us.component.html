@@ -1,0 +1,30 @@
+<script type="text/javascript">
+  $(function() {
+    $('.map').maphilight();
+  });
+</script>
+
+<div class="find_us">
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{find_us_title}}</p>
+    </div>
+    
+    <div class="find_us_content">
+        <div class="find_us_content_address">
+          <p>{{cityStreet}}<br>{{country}}</p>
+        </div>
+        <div class="find_us_content_map">
+          <img src="../../assets/images/map.png" usemap="#m1" height="224" width="283" class="map" alt="map">
+          <map name="m1"><area shape="circle" coords="100,100,15" href="http://maps.walla.co.il/?cityS=%FA%EC%20%E0%E1%E9%E1%20%E9%F4%E5&streetS=%F9%E3%F8%E5%FA%20%E1%EF%20%E2%E5%F8%E9%E5%EF&houseS=%32%38&ref=directlink" title="Address"/></map>
+          <a class="map2" href="http://maps.walla.co.il/?cityS=%FA%EC%20%E0%E1%E9%E1%20%E9%F4%E5&streetS=%F9%E3%F8%E5%FA%20%E1%EF%20%E2%E5%F8%E9%E5%EF&houseS=%32%38&ref=directlink"></a>
+        </div>
+        <div class="find_us_content_address">
+          <p>{{freephone}}</p>
+          <p>{{telephone}}</p>
+          <p>{{fax}}</p>
+          <p>{{mail}}</p>
+        </div>
+        
+    </div>
+  </div>

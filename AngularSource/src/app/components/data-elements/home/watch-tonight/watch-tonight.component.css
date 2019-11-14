@@ -1,0 +1,56 @@
+.watch_tonight{
+	margin-bottom:30px;
+	width:233px;
+	float:right;
+}
+
+
+
+.watch_tonight_bottom {
+	display: flex;
+	height:77px;
+	background-color:#565656;
+	background: rgba(0, 0, 0, .42);
+	margin-bottom:6px;
+	width:100%;
+	transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+
+   /* text-align:center;
+	display: table-cell;
+	vertical-align: middle; */
+}
+
+.watch_tonight_bottom:hover{
+	background-color:#565656;
+	background: rgba(0, 0, 0, .60);
+	cursor: pointer
+}
+
+
+.watch_tonight_bottom_time{
+	/* border: 2px dotted blue; */
+	padding-top:23px;
+	text-align:center;
+	width:70px;
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.watch_tonight_bottom_text{
+	/* border: 2px dotted red; */
+	padding-top:10px;
+	width:145px;
+	text-align:center;
+	color:#CCCACA;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.watch_tonight_arrows{
+	float: right;
+	width:180px;
+	height:47px;
+	margin: auto;
+	padding-top:10px;
+}

@@ -1,0 +1,69 @@
+<main class="main_video row">
+		
+  <p class="welcome_text"><span class="welcome_first">{{welcome_first}}</span><br>{{welcome_text}}</p>
+  
+  <nav class="table_item col-xs-0 col-sm-0 col-md-2">
+				
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon1"></div></td>
+        <td class="text_in_table">{{text_in_table[0]}}</td>
+      </tr>
+    </table>
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon2" (click)="changeToMusic()"></div></td>
+        <td class="text_in_table" (click)="changeToMusic()">{{text_in_table[1]}}</td>
+      </tr>
+    </table>
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon3" (click)="changeToMovie()"></div></td>
+        <td class="text_in_table" (click)="changeToMovie()">{{text_in_table[2]}}</td>
+      </tr>
+    </table>
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon4" (click)="changeToStudy()"></div></td>
+        <td class="text_in_table" (click)="changeToStudy()">{{text_in_table[3]}}</td>
+      </tr>
+    </table>
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon5"></div></td>
+        <td class="text_in_table">{{text_in_table[4]}}</td>
+      </tr>
+    </table>
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon6"></div></td>
+        <td class="text_in_table">{{text_in_table[5]}}</td>
+      </tr>
+    </table>
+    <table class="one_table_item">
+      <tr>
+        <td><div class="bicon" id="bicon7"></div></td>
+        <td class="text_in_table">{{text_in_table[6]}}</td>
+      </tr>
+    </table>
+  </nav>
+  
+
+
+
+
+  <div class="full_monitor col-xs-11 col-sm-11 col-md-9">
+    <div class="monitor">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe width="720" height="409" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="bottom_monitor">
+      <div class="right_button" (click)="changeVideoRight()"></div>
+      <div class="and"></div>
+      <div class="left_button" (click)="changeVideoLeft()"></div>
+    </div>
+  </div>
+  
+  
+</main>

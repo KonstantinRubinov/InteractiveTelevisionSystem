@@ -1,0 +1,30 @@
+<div class="latest_videos">
+    
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{latest_video_title}}</p>
+    </div>
+    
+    <div class="lvideos" *ngFor="let lvideo of lvideos">
+      <div class="lvideos_pic" [ngStyle]="{'background-image': 'url(' + lvideo.url + ')'}"></div>
+      <div>
+          <p class="lvideos_text simple-text-h">{{lvideo.text}}</p>
+          <p class="lvideos_date simple-text-h">{{lvideo.date}}</p>
+      </div>
+    </div>
+    
+    <!-- <div class="lvideos" *ngFor="let program of programs">
+      <div class="lvideos_pic" [ngStyle]="{'background-image': 'url(' + program.programMainPicture + ')'}"></div>
+      <div>
+          <p class="lvideos_text simple-text-h">{{program.programDescription}}</p>
+          <p class="lvideos_date simple-text-h">{{program.programDateTime | date:'dd.MM.yyyy'}}</p>
+      </div>
+    </div> -->
+    
+    <div class="latest_videos_arrows">
+      <div class="right_button" (click)="changePictureRight()"></div>
+      <div class="and"></div>
+      <div class="left_button" (click)="changePictureLeft()"></div>
+    </div>
+    
+  </div>

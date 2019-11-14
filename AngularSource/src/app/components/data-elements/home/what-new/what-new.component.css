@@ -1,0 +1,106 @@
+.what_new{
+	float: left;
+	margin-bottom:6px;
+	max-width:685px;
+	
+}
+
+.new{
+	float:right;
+	width:220px;
+	margin-bottom:50px;
+	margin-right:5px;
+}
+
+
+
+
+
+.new:hover > .new_program{
+	background-color:#565656;
+	background: rgba(0, 0, 0, .60);
+	cursor:pointer;
+}
+
+.new:hover > .new_program > .new_program_pic{
+	opacity:1;
+	cursor:pointer;
+}
+
+.new:hover > .new_time{
+	background-color:#565656;
+	background: rgba(0, 0, 0, .60);
+	cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+.new_program{
+	background-color:#565656;
+	background: rgba(0, 0, 0, .20);
+	height:250px;
+	width:1;
+	margin-bottom:10px;
+	text-align:center;
+	
+	
+	transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+}
+
+
+
+.new_program_pic{
+	height:180px;
+	opacity:0.8;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   background-position: 30% 20%;
+}
+
+.new_program_name{
+	margin:0px;
+	padding-top:10px;
+	font-family: FbAdrenalinRegular;
+	font-size:14pt;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	color:#ffffff;
+	
+}
+
+.new_program_title{
+	margin:0px;
+	font-family: FbAdrenalinRegular;
+	font-size:14pt;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	color:#CCCACA;
+}
+
+.new_time{
+	text-align:center;
+	display: table-cell;
+	vertical-align: middle;
+
+
+	background-color:#565656;
+	background: rgba(0, 0, 0, .20);
+	height:37px;
+	width:133px;
+	
+	margin:0px;
+	font-family: FbAdrenalinRegular;
+	font-size:20pt;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	color:#ffffff;
+	transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+}

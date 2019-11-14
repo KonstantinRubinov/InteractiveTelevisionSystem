@@ -1,0 +1,12 @@
+ .watch_videos_row {
+	background-color:#000000;
+	background: rgba(0, 0, 0, .20);
+	padding-top: 44px;
+	float:right;
+	width:100%;
+	/* display: flex; */
+}
+
+#latest-videos{
+	float: left;
+}

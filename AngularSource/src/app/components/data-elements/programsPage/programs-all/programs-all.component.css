@@ -1,0 +1,48 @@
+.allPrograms{
+	max-width:295px;
+	float: right;
+}
+
+.list_of_all_programs_div {
+	padding-left: 25px;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .28);
+	margin-bottom:16px;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+.list_of_all_programs_div li:before {
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	content: ">";
+	padding-left: 20px;
+}
+
+.list_of_all_programs_div li {
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.list_of_all_programs_div li a{
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	padding-top:10px;
+	padding-bottom:10px;
+	transition: color .25s ease-in-out;
+   -moz-transition: color .25s ease-in-out;
+   -webkit-transition: color .25s ease-in-out;
+}
+
+.list_of_all_programs_div li a:hover{
+	color:#CCCACA;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	padding-top:10px;
+	padding-bottom:10px;
+	text-decoration:none;
+}

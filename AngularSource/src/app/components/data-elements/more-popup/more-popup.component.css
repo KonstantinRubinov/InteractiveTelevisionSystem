@@ -1,0 +1,125 @@
+.right_data{
+	float:right;
+	margin-right:15px;
+}
+
+
+.main_name {
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 2px solid #BFBEBE;
+	-webkit-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #777777;
+	-moz-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #777777;
+	-ms-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #777777;
+	-o-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #777777;
+	box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #777777;
+	padding-left:10px;
+	padding-right:10px;
+	color:#fff;
+	margin-bottom:20px;
+	font-family: " Neue",Helvetica,Arial,sans-serif;
+	font-size:18pt;
+}
+
+.main_posted {
+	font-family: " Neue",Helvetica,Arial,sans-serif;
+	font-size:17px;
+	margin-top:10px;
+	margin-bottom:7px;
+	color:#fff;
+	clear:both;
+	
+}
+
+.main_time_day {
+	font-size:14px;
+	margin-top:0px;
+	margin-bottom:7px;
+	color:#fff;
+	clear:both;
+	
+}
+
+.main_time {
+	background-color: rgba(0, 0, 0, 0.3);
+	margin-top:0px;
+	margin-bottom:7px;
+	float:right;
+	width:90px;
+	text-align:center;
+}
+
+.main_day {
+	background-color: rgba(0, 0, 0, 0.3);
+	margin-top:0px;
+	margin-bottom:7px;
+	float:right;
+	width:90px;
+	text-align:center;
+}
+
+.comments {
+	background-color: rgba(255, 255, 255, 0.2);
+	float:right;
+	width:195px;
+	margin-top:10px;
+	text-align:center;
+	margin-right:0px;
+	font-family: " Neue",Helvetica,Arial,sans-serif;
+	font-size:10pt;
+}
+
+.my_p{
+	float:right;
+	margin-top:0px;
+	margin-bottom:5px;
+	margin-right:10px;
+	text-shadow:2px 2px 8px #000;
+}
+
+.picture_data{
+	float:left;
+	border-style: solid;
+    border-width: 2px;
+	border-color:#EAEAEA;
+	-webkit-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-moz-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-ms-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-o-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	margin-bottom:10px;
+	margin-left:15px;
+	background-position: center;
+}
+
+.text_data{
+	color:#fff;
+	clear:both;
+	margin:15px;
+	text-align: right;
+	font-family: " Neue",Helvetica,Arial,sans-serif;
+	font-size:10pt;
+}
+
+.close_popup_button{
+	float:left;
+	margin:0px;
+	color:#000;
+	
+	background-color:#BFBEBE;
+	padding-left:10px;
+	padding-right:10px;
+	font-family: FbAdrenalinRegular;
+	font-size:20px;
+	cursor:pointer;
+	text-decoration:none;
+}
+
+.close_popup_button:hover{
+	color:#000;
+	text-decoration:none;
+}
+
+.close_popup_button:active{
+	color:#000;
+	text-decoration:none;
+}

@@ -1,0 +1,36 @@
+<div class="browse_by_data_div">
+    <div class="line_div"></div>
+    <p class="browse_by_data_div_text">{{prefered_news_title}}</p>
+  </div>
+  
+  <div class="all_featured_news_div">
+    
+      <div class="featured_new_div" *ngFor="let prefered_news of prefered_news_array">
+        <div class="featured_new_picture" [ngStyle]="{'background-image': 'url(' + prefered_news.url + ')'}"></div>
+        <article class="data">
+          <p class="data_date">{{prefered_news.date | date}}</p>
+          <p class="data_title">{{prefered_news.title}}</p>
+          <p class="data_comments">{{prefered_news.comment}}</p>
+
+          <a>
+            <button (click)="DataToModal(prefered_news)" type="button" class="data_button" data-toggle="modal" data-target="#exampleModalCenter">
+              {{data_button}}
+            </button>
+          </a>
+        </article>
+      </div>
+      
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-custom">
+      
+      <app-more-popup [myData]="my_data_to_popup"></app-more-popup>
+
+
+    </div>
+  </div>
+</div>

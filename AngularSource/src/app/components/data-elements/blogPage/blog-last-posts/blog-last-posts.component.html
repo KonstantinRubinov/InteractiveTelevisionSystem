@@ -1,0 +1,47 @@
+<div class="browse_by_blog">
+  
+  <div class="browse_by_data_div">
+    <div class="line_div"></div>
+    <p class="browse_by_data_div_text">{{last_posts_title}}</p>
+  </div>
+  
+  <div class="blog_item" *ngFor="let blog_item of blog_items">
+    <div class="blog_item_header">
+      <div class="blog_item_date"><span class="blog_item_date_day">{{blog_item.date}}</span><br><span class="blog_item_date_mounth">{{blog_item.date}}</span></div>
+      <div class="blog_comment_date_text">
+        <p class="blog_item_title simple-text">{{blog_item.title}}</p>
+        <p class="blog_item_posted simple-text">{{blog_item.posted}}</p>
+      </div>
+      <div class="blog_comments_date_text simple-text">{{blog_item.commentsNum}}</div>
+    </div>
+    
+    <div class="blog_item_content">
+      <div class="blog_item_content_picture" [ngStyle]="{'background-image': 'url(' + blog_item.url + ')'}"></div>
+      <article class="blog_item_content_text">
+        <p class="blog_item_date_text simple-text-h">{{blog_item.comment}}</p>
+        
+        
+
+        <a>
+          <button (click)="DataToModal(blog_item)" type="button" class="blog_item_content_button" data-toggle="modal" data-target="#exampleModalCenter3">
+            {{data_button}}
+          </button>
+        </a>
+      </article>
+    </div>
+  </div>
+  
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-custom3">
+      
+      <app-more-popup [myData]="my_data_to_popup3"></app-more-popup>
+
+
+    </div>
+  </div>
+</div>

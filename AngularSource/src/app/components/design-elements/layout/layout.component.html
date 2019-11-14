@@ -1,0 +1,9 @@
+<header id="header">
+  <app-header *ngIf='env.hasTranslations'></app-header>
+</header>
+<main>
+  <router-outlet id="content" *ngIf='env.hasTranslations'></router-outlet>
+</main>
+<footer>
+  <app-footer id="footer" *ngIf='env.hasTranslations'></app-footer>
+</footer>

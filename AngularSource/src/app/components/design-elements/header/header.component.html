@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light row" id="container">
+  <img id="myLogo" src="../../../assets/images/main_logo.png" class="col-xs-12 col-sm-0 col-md-0 right">
+  <!-- <img id="myLogo" src="../../../assets/images/main_logo.png" class="navbar-brand main_logo col-xs-0 right"> -->
+  <!-- <section class="col-xs-12 col-sm-12 col-md-12 left row" id="mainNavSection"> -->
+  <section class="col-xs-12 left row" id="mainNavSection">
+      
+    
+    
+    <nav id="navMain">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav row" id="navbarSupportedContent2">
+                <li class="navbar-brand five_navs_out col-md-5ths col-xs-6 right" *ngFor="let navigator of navigators">
+                    <a routerLink={{navigator.routerLink}} routerLinkActive="active-link" class="five_navs">{{navigator.linkName}}</a>
+                </li>
+            </ul>
+          </div>
+      </nav>
+
+
+
+
+      <div class="second_nav_line"></div>
+      <section id="underNavAndSearch">
+          <nav id="navUnder">
+            <ul class="register_login">
+              <li class="reg_log">{{signup_text}}</li>
+              <li class="reg_log">{{signin_text}}</li>
+            </ul>
+          </nav>
+          <div class="search_div">
+            <input type="button" value="{{search_btn_text}}" class="search_button">
+            <input type="text" id="searchText" size="13" name="message" required id="message">
+          </div>
+      </section>
+
+
+
+
+
+
+
+
+
+  </section>
+</nav>

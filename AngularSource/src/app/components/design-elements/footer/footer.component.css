@@ -1,0 +1,72 @@
+footer{
+	margin-top:10px;
+	width:100%;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .60);
+	clear:both;
+}
+
+
+
+.footer_logotype{
+	float:right;
+}
+
+
+.to_left_of_logotype{
+	width: 100%;
+    display: flex;
+}
+
+
+
+.to_left_of_logotype ul{
+    margin: 0;
+    padding: 0;
+    padding-right: 15px;
+    padding-top: 10px;
+    width: 140px;
+	list-style-type: none;
+}
+
+
+
+.to_left_of_logotype li:before {
+    line-height: 10px;
+	color:#CCCACA;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	content: ">";
+    padding-left: 30px;
+}
+
+.to_left_of_logotype li {
+	width:140px;
+    font-family: FbAdrenalinLight;
+	margin:0;
+    padding:0;
+	line-height: 10px;
+	color:#CCCACA;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	padding-top:12px;
+	padding-bottom:12px;
+}
+
+.to_left_of_logotype li a{
+	margin:0;
+    padding:0;
+	line-height: 10px;
+	color:#CCCACA;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	transition: color .25s ease-in-out;
+   -moz-transition: color .25s ease-in-out;
+   -webkit-transition: color .25s ease-in-out;
+}
+
+.to_left_of_logotype li a:hover{
+	margin:0;
+    padding:0;
+	line-height: 10px;
+	color:#fff;
+	text-decoration:none;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}

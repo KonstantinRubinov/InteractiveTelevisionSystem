@@ -1,0 +1,17 @@
+<div class="allPrograms">
+      
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{all_programs_title}}</p>
+    </div>
+      
+    <div class="list_of_all_programs_div">
+
+      <ul>
+        <li *ngFor="let program of programs">
+          <a href="#" class="simple-text-h">{{program}}</a>
+        </li>
+      </ul>
+      
+    </div>
+</div>

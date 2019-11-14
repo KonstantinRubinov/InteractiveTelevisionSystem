@@ -1,0 +1,19 @@
+<div class="row col-xs-12 col-sm-12 col-md-12">
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{important_news_title}}</p>
+    </div>
+  </div>
+  
+  <div class="row col-xs-12 col-sm-12 col-md-12">
+    <div class="all_highlights_div">
+      <div class="highlight_pic" *ngFor="let important_news of important_news_array" [ngStyle]="{'background-image': 'url(' + important_news.url + ')'}"></div>
+      
+    </div>
+  </div>
+  
+  <div class="highlights_arrows">
+    <div class="right_button" (click)="changeOnePictureRight()"></div>
+    <div class="and"></div>
+    <div class="left_button" (click)="changeOnePictureLeft()"></div>
+  </div>

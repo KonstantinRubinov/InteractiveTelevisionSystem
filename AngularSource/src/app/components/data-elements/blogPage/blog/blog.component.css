@@ -1,0 +1,20 @@
+.blog_row {
+	text-align:center;
+}
+
+#blog-last-posts{
+	max-width:685px;
+	float:right;
+}
+
+#blog-archives{
+	width:290px;
+	float:left;
+	margin-bottom:20px;
+}
+
+#blog-categories{
+	width:290px;
+	float:left;
+	margin-bottom:20px;
+}

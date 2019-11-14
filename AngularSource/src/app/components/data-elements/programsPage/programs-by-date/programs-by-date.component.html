@@ -1,0 +1,25 @@
+<div class="programs_by_date">
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{choose_by_date_title}}</p>
+    </div>
+    
+    <div class="browse_by_data_list_div">
+      <div class="day_mounth_year">
+        <input type="number" min="1" max="31" step="1" value="1" class="day">
+        <input type="month" class="mounth">
+        <input type="number" min="2018" max="2222" step="1" value="2018" class="year">
+      </div>
+      
+      <div class="about_program" *ngFor="let about_program of about_program_array">
+        <div class="picture"  [ngStyle]="{'background-image': 'url(' + about_program.url + ')'}"></div>
+        <article class="text">
+          <p class="about_program_show">{{about_program.show}}</p>
+          <p class="about_program_title"><a href="#">{{about_program.title}}</a></p>
+          <p class="about_program_text">{{about_program.text}}</p>
+        </article>
+        <div class="time">{{about_program.time}}</div>
+      </div>
+      
+    </div>
+  </div>

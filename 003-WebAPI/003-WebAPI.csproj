@@ -1,0 +1,284 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFC262A1-8070-42CE-82CE-A058BB6D287D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntTVapi</RootNamespace>
+    <AssemblyName>003-WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="and.a258322c9c1c2cbf3c76.png" />
+    <Content Include="assets\fonts\AdobeFnt16.lst" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\and.png" />
+    <Content Include="assets\images\blog_item_content_picture1.png" />
+    <Content Include="assets\images\blog_item_content_picture2.png" />
+    <Content Include="assets\images\disc.png" />
+    <Content Include="assets\images\featured_new_picture1.png" />
+    <Content Include="assets\images\featured_new_picture2.png" />
+    <Content Include="assets\images\featured_new_picture3.png" />
+    <Content Include="assets\images\footer_logotype.png" />
+    <Content Include="assets\images\for_monitor.png" />
+    <Content Include="assets\images\go_up_button.png" />
+    <Content Include="assets\images\hungred.png" />
+    <Content Include="assets\images\icon_analitics.png" />
+    <Content Include="assets\images\icon_analitics_active.png" />
+    <Content Include="assets\images\icon_analitics_hover.png" />
+    <Content Include="assets\images\icon_education.png" />
+    <Content Include="assets\images\icon_education_active.png" />
+    <Content Include="assets\images\icon_education_hover.png" />
+    <Content Include="assets\images\icon_game.png" />
+    <Content Include="assets\images\icon_game_active.png" />
+    <Content Include="assets\images\icon_game_hover.png" />
+    <Content Include="assets\images\icon_music.png" />
+    <Content Include="assets\images\icon_music_active.png" />
+    <Content Include="assets\images\icon_music_hover.png" />
+    <Content Include="assets\images\icon_sport.png" />
+    <Content Include="assets\images\icon_sport_active.png" />
+    <Content Include="assets\images\icon_sport_hover.png" />
+    <Content Include="assets\images\icon_talkshow.png" />
+    <Content Include="assets\images\icon_talkshow_active.png" />
+    <Content Include="assets\images\icon_talkshow_hover.png" />
+    <Content Include="assets\images\icon_video.png" />
+    <Content Include="assets\images\icon_video_active.png" />
+    <Content Include="assets\images\icon_video_hover.png" />
+    <Content Include="assets\images\infinity.png" />
+    <Content Include="assets\images\left.png" />
+    <Content Include="assets\images\left_clicked.png" />
+    <Content Include="assets\images\left_hover.png" />
+    <Content Include="assets\images\mail.png" />
+    <Content Include="assets\images\mainbg.png" />
+    <Content Include="assets\images\main_logo.png" />
+    <Content Include="assets\images\map.png" />
+    <Content Include="assets\images\name.png" />
+    <Content Include="assets\images\new_program_pic1.png" />
+    <Content Include="assets\images\new_program_pic2.png" />
+    <Content Include="assets\images\new_program_pic3.png" />
+    <Content Include="assets\images\phone.png" />
+    <Content Include="assets\images\pic1.png" />
+    <Content Include="assets\images\pic2.png" />
+    <Content Include="assets\images\pic3.png" />
+    <Content Include="assets\images\pic4.png" />
+    <Content Include="assets\images\pic5.png" />
+    <Content Include="assets\images\pic6.png" />
+    <Content Include="assets\images\picture1.png" />
+    <Content Include="assets\images\picture2.png" />
+    <Content Include="assets\images\right.png" />
+    <Content Include="assets\images\right_clicked.png" />
+    <Content Include="assets\images\right_hover.png" />
+    <Content Include="assets\images\search_button.png" />
+    <Content Include="assets\images\sport_event_picture1.png" />
+    <Content Include="assets\images\sport_event_picture2.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="icon_analitics.5e7bc523ee91fe14f2c1.png" />
+    <Content Include="icon_analitics_active.b3ac7a56becb5e10f062.png" />
+    <Content Include="icon_analitics_hover.a0b7e6d02f996932adfd.png" />
+    <Content Include="icon_education.d468d20cfe0a69ca487c.png" />
+    <Content Include="icon_education_active.a57342a3a04de6d5d8f4.png" />
+    <Content Include="icon_education_hover.77fd1fcd98f4c3c5ff9e.png" />
+    <Content Include="icon_game.709640dd8a86eb8bde6b.png" />
+    <Content Include="icon_game_active.5ea8416f3eeeb807c131.png" />
+    <Content Include="icon_game_hover.6ad5988ab06f84297079.png" />
+    <Content Include="icon_music.fe285379f21179e1297e.png" />
+    <Content Include="icon_music_active.af63f97d4ebf56091287.png" />
+    <Content Include="icon_music_hover.e0ff31a48ee4f36adf22.png" />
+    <Content Include="icon_sport.7f6d938de7a49f0defb8.png" />
+    <Content Include="icon_sport_active.539ca1bbd9ea940841c8.png" />
+    <Content Include="icon_sport_hover.171f659b1f75989744cc.png" />
+    <Content Include="icon_talkshow.054136fdcd818cc6d00f.png" />
+    <Content Include="icon_talkshow_active.de66472749b306933f93.png" />
+    <Content Include="icon_talkshow_hover.3948703213ed2bef8024.png" />
+    <Content Include="icon_video.b333b83231e4749b3ba2.png" />
+    <Content Include="icon_video_active.204dafbb4e6bc52b2dec.png" />
+    <Content Include="icon_video_hover.bda41011f4820498dadb.png" />
+    <Content Include="index.html" />
+    <Content Include="left.cf324ce170648c5addd0.png" />
+    <Content Include="left_clicked.cfead02417edff2b7c60.png" />
+    <Content Include="left_hover.fd05243b829985f03804.png" />
+    <Content Include="mail.841f0a848c7e3312a953.png" />
+    <Content Include="main.0c5f804544e99ac88ceb.js" />
+    <Content Include="mainbg.fd0e5f4215d7eb418e6b.png" />
+    <Content Include="name.ed758e3bf4c1931ee0d8.png" />
+    <Content Include="phone.ba01bbee248734596318.png" />
+    <Content Include="polyfills.7037a817a5bb670ed2ca.js" />
+    <Content Include="right.2c04827a8cac0f310c5a.png" />
+    <Content Include="right_clicked.f13fb3955ec01224d329.png" />
+    <Content Include="right_hover.6d9d83dd869c954d2b54.png" />
+    <Content Include="runtime.ec2944dd8b20ec099bf3.js" />
+    <Content Include="search_button.768dacbbc3c921d6ed1b.png" />
+    <Content Include="styles.7bd27583d2c6ca75f640.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BlogApiController.cs" />
+    <Compile Include="Controllers\BlogCommentApiController.cs" />
+    <Compile Include="Controllers\NewsApiController.cs" />
+    <Compile Include="Controllers\ProgramApiController.cs" />
+    <Compile Include="Controllers\TranslationApiController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Errors.cs" />
+    <Compile Include="Helper\ErrorsHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\AdobeHebrew-Regular.otf" />
+    <Content Include="assets\fonts\ARIAL_0.TTF" />
+    <Content Include="assets\fonts\FbAdrenalin-Light_0.otf" />
+    <Content Include="assets\fonts\FbAdrenalin-Regular_0.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\Hachaluzim-Medium_0.ttf" />
+    <Content Include="assets\fonts\Hachaluzim-Regular_0.ttf" />
+    <Content Include="assets\fonts\Hachaluzim.ttf" />
+    <Content Include="assets\fonts\MinionPro-Regular.otf" />
+    <Content Include="assets\fonts\timesbd.ttf" />
+    <Content Include="FbAdrenalin-Light_0.e6ba80bcc2ca78b7d4ab.otf" />
+    <Content Include="FbAdrenalin-Regular_0.9644abdedf39c0115399.otf" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\001-DataAccessLayer\001-DataAccessLayer.csproj">
+      <Project>{b0b89344-cd9b-41d3-a33b-d89a2137900f}</Project>
+      <Name>001-DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\002-BusinessLogicLayer\002-BusinessLogicLayer.csproj">
+      <Project>{92d3a51c-03df-47bd-9f21-5047103b7cdb}</Project>
+      <Name>002-BusinessLogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50240</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50240/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

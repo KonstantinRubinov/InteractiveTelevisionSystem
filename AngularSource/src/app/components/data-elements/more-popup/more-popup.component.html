@@ -1,0 +1,26 @@
+<div class="right_data">
+  <div class="main_name">{{myData.title}}</div>
+  <div class="main_posted">
+    <div [ngStyle]="getMainPostedBy()">{{myData.posted}}</div>
+    <p class="my_p">:</p>
+  </div>
+  <div class="main_time_day">
+    <div class="main_time">{{myData.date | date:'shortTime'}}</div>
+    <p class="my_p">></p>
+  </div>
+  <div class="main_time_day">
+    <div class="main_day">{{myData.date | date}}</div>
+    <p class="my_p">></p>
+  </div>
+</div>
+
+<div class="picture_data" [ngStyle]="getPictureWHC()"></div>
+
+
+<div class="comments" *ngIf='myData.commentsNum'>{{myData.commentsNum}}</div>
+
+
+<p class="text_data">בניגוד לטענה הרווחת, Lorem Ipsum אינו סתם טקסט רנדומלי. יש לו שורשים וחלקים מתוך הספרות הלטינית הקלאסית מאז 45 לפני הספירה. מה שהופך אותו לעתיק מעל 2000 שנה. ריצ'רד מקלינטוק, פרופסור לטיני בקולג' של המפדן-סידני בורג'יניה, חיפש את אחת המילים המעורפלות ביותר בלטינית - consectetur - מתוך פסקאות של Lorem Ipsum ודרך ציטוטים של המילה מתוך הספרות הקלאסית, הוא גילה מקור בלתי ניתן לערעור. Lorem Ipsum מגיע מתוך מקטע 1.10.32 ו- 1.10.33 של "de Finibus Bonorum et Malorum" (הקיצוניות של הטוב והרע) שנכתב על ידי קיקרו ב-45 לפני הספירה. ספר זה הוא מאמר על תאוריית האתיקה, שהיה מאוד מפורסם בתקופת הרנסנס. השורה הראשונה של "Lorem ipsum dolor sit amet", שמופיעה בטקסטים של Lorem Ipsum, באה משורה במקטע 1.10.32</p>
+<!-- <p class="text_data" id="text_data1">{{myData.comment}}</p> -->
+
+<a  class="close_popup_button" data-dismiss="modal">סגור</a>

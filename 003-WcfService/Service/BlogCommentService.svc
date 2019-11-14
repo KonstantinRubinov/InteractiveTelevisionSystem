@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="IntTVapi.BlogCommentService" CodeBehind="BlogCommentService.svc.cs" %>

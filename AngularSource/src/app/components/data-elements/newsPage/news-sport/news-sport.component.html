@@ -1,0 +1,36 @@
+<div class="sport_events_div">
+  
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{sport_news_title}}</p>
+    </div>
+    
+    <div class="sport_event_div" *ngFor="let sport_news of sport_news_array">
+      <div class="sport_event_picture" [ngStyle]="{'background-image': 'url(' + sport_news.url + ')'}"></div>
+      <article class="sport_event_text">
+        <p class="sport_event_text_type">{{sport_news.title}}</p>
+        <p class="sport_event_text_name">{{sport_news.underTitle}}</p>
+        <p class="sport_event_text_comments">{{sport_news.comment}}</p>
+      </article>
+      
+      <a>
+        <button (click)="DataToModal2(sport_news)" type="button" class="data_button" data-toggle="modal" data-target="#exampleModalCenter2">
+          {{data_button}}
+        </button>
+      </a>
+    </div>
+    
+  </div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      
+      <app-more-popup [myData]="my_data_to_popup2"></app-more-popup>
+
+
+    </div>
+  </div>
+</div>

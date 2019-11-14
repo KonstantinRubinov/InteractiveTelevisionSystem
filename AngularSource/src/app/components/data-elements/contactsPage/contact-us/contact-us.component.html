@@ -1,0 +1,33 @@
+<div class="get_in_touch">
+      
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{contact_us_title}}</p>
+    </div>
+    
+    <div class="contact_content">
+    
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      
+        <div class="name_phone_email">
+          <div class="name">
+            <div class="name_pic"></div>
+			      <input required [(ngModel)]="model.name" type="text" name="fullName" placeholder={{namePlaceholder}} required id="fullName" #name="ngModel">
+          </div>
+          <div class="phone">
+            <div class="phone_pic"></div>
+			      <input required [(ngModel)]="model.phone" type="tel" name="telephoneNumber" placeholder={{telephonePlaceholder}} required id="telephoneNumber" #phone="ngModel">
+          </div>
+          <div class="email">
+            <div class="mail_pic"></div>
+			      <input required [(ngModel)]="model.email" type="email" name="eMail" placeholder={{mailPlaceholder}} required id="eMail" #email="ngModel">
+          </div>
+        </div>
+        <textarea required [(ngModel)]="model.message" class="message" rows="7" name="message" placeholder={{messagePlaceholder}} required id="message" #message="ngModel"></textarea>
+        <button type="submit" [disabled]="!loginForm.form.valid">{{send}}</button>
+		    <button type="button" (click)="loginForm.reset()">{{clear}}</button>
+      </form>
+      
+    </div>
+    
+  </div>

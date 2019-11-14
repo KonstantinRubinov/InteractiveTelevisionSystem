@@ -1,0 +1,15 @@
+<div class="blog_all_programs">
+  <div class="browse_by_data_div">
+    <div class="line_div"></div>
+    <p class="browse_by_data_div_text">{{categories_title}}</p>
+  </div>
+  
+  <div class="blog_all_programs_text">
+      <ul>
+        <li *ngFor="let category of categories">
+          <a href="#" class="simple-text-h">{{category}}</a>
+        </li>
+      </ul>
+  </div>
+  
+</div>

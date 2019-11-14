@@ -1,0 +1,17 @@
+<div class="what_new">
+    
+    <div class="browse_by_data_div">
+      <div class="line_div"></div>
+      <p class="browse_by_data_div_text">{{what_new_title}}</p>
+    </div>
+    
+    <div class="new" *ngFor="let new_program of new_programs">
+      <div class="new_program">
+        <div class="new_program_pic" [ngStyle]="{'background-image': 'url(' + new_program.url + ')'}"></div>
+        <p class="new_program_name">{{new_program.name}}</p>
+        <p class="new_program_title">{{new_program.title}}</p>
+      </div>
+      <div class="new_time">{{new_program.time}}</div>
+    </div>
+    
+  </div>

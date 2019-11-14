@@ -1,0 +1,160 @@
+.blog_item {
+	width:100%;
+	margin-bottom:16px;
+	padding-bottom:16px;
+	float:right;
+}
+
+.blog_item_header {
+	width:100%;
+	margin-bottom:16px;
+	padding-bottom:16px;
+	float:right;
+}
+
+.blog_item_date{
+	width:60px;
+	border-style: solid;
+    border-width: 2px;
+	border-color: #EAEAEA;
+	box-shadow: -1px 1px 10px 3px #B7B7B7, inset 0 0 15px #B7B7B7;
+	float:right;
+	padding-top:5px;
+	background: rgba(0, 0, 0, .10);
+	text-shadow: 0 0 1.0em #000;
+	text-align:center;
+}
+
+.blog_item_date_day{
+	color:#E5E5E5;
+	font-family: FbAdrenalinLight;
+	font-size:15pt;
+}
+.blog_item_date_mounth{
+	color:#EEEEEE;
+	font-family: FbAdrenalinRegular;
+	font-size:10pt;
+}
+
+
+
+
+.blog_comment_date_text{
+	width:185px;
+	height:60px;
+	float:right;
+}
+
+.blog_item_title{
+	text-shadow: 2px 2px 15px #000;
+	color:#fff;
+	text-decoration:underline;
+	font-size:14px;
+	margin:0px;
+	padding-top:10px;
+}
+
+.blog_item_posted{
+	color:#000;
+	opacity: 0.5;
+	font-size:14px;
+}
+
+.blog_comments_date_text{
+	padding-top:4px;
+	border-style: solid;
+    border-width: 2px;
+	border-color: #EAEAEA;
+	box-shadow: -1px 1px 10px 5px #B7B7B7, inset 0 0 25px #B7B7B7;
+	text-shadow: 2px 2px 4px #7F7F7F;
+	width:125px;
+	float:left;
+	color:#000;
+	opacity: 0.5;
+
+}
+
+
+.blog_item_content {
+	width:100%;
+	margin-bottom:16px;
+	padding-bottom:16px;
+	float:right;
+}
+
+
+
+.blog_item_content_picture{
+	border-style: solid;
+    border-width: 2px;
+	border-color: #EAEAEA;
+	width:324px;
+	height:310px;
+	float:right;
+	box-shadow: -1px 1px 10px 5px #B7B7B7, inset 0 0 20px #3A3A3A;
+	opacity:0.8;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   background-position: 60% 60%; 
+}
+
+.blog_item:hover > .blog_item_content>.blog_item_content_picture{
+	opacity:1;
+}
+
+
+
+.blog_item_content_text{
+	width:324px;
+	height:310px;
+	float:left;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .28);
+}
+
+.blog_item_date_text{
+	width:100%;
+	text-align:right;
+	color:#fff;
+	padding:10px;
+	margin: 0;
+	margin-bottom: 5px;
+
+	/* border-style: groove;
+  border-color: coral;
+  border-width: 1px; */
+}
+
+.blog_item_content_button{
+	float:right;
+	width:134px;
+	height:38px;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .20);
+	padding-top:5px;
+	font-family: FbAdrenalinRegular;
+	text-align:center;
+	font-size:16pt;
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.modal-custom3 {
+	background-color: rgba(120, 120, 120);
+	border: 3px solid #BFBEBE;
+	display: inline-block;
+	-webkit-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-moz-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-ms-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-o-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	/* -webkit-transition: opacity .5s, top .5s!important;
+	-moz-transition: opacity .5s, top .5s!important;
+	-ms-transition: opacity .5s, top .5s!important;
+	-o-transition: opacity .5s, top .5s!important;
+	transition: opacity .5s, top .5s!important; */
+	padding-top:15px;
+	width: 420px !important;
+	margin: auto;
+}

@@ -1,0 +1,108 @@
+.sport_events_div{
+	max-width:523px;
+	float:left;
+}
+
+.sport_event_div{
+	background-color:#000000;
+	background: rgba(0, 0, 0, .28);
+	margin-bottom:20px;
+	text-align:right;
+}
+
+.sport_event_picture{
+	
+	height:265px;
+	border-style: solid;
+    border-width: 2px;
+	border-color:#EAEAEA;
+	box-shadow: 0 0 4px #000;
+	opacity:0.8;
+	transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   background-position: 75% 60%;
+}
+
+
+.sport_event_div:hover > .sport_event_picture{
+	opacity:1;
+}
+
+
+
+.sport_event_text{
+	height:180px;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+.sport_event_text_type{
+	margin:0px;
+	text-align:right;
+	font-family: FbAdrenalinRegular;
+	width:100%;
+	font-size:16pt;
+	float:right;
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.sport_event_text_name{
+	line-height: 150%;
+	margin:0px;
+	text-decoration:underline;
+	text-align:right;
+	font-family: FbAdrenalinRegular;
+	width:100%;
+	font-size:16pt;
+	float:right;
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.sport_event_text_comments{
+	margin:0px;
+	text-align:right;
+	line-height: 150%;
+	
+	font-family: FbAdrenalinRegular;
+	
+	width:100%;
+	font-size:10pt;
+	float:right;
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.data_button{
+	width:133px;
+	height:40px;
+	background-color:#000000;
+	background: rgba(0, 0, 0, .20);
+	padding-top:5px;
+	font-family: FbAdrenalinRegular;
+	text-align:center;
+	font-size:16pt;
+	color:#fff;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+}
+
+.modal-content {
+	background-color: rgba(120, 120, 120);
+	border: 3px solid #BFBEBE;
+	display: inline-block;
+	-webkit-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-moz-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-ms-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	-o-box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	box-shadow: 4px 4px 15px #000, inset 4px 4px 15px #000;
+	/* -webkit-transition: opacity .5s, top .5s!important;
+	-moz-transition: opacity .5s, top .5s!important;
+	-ms-transition: opacity .5s, top .5s!important;
+	-o-transition: opacity .5s, top .5s!important;
+	transition: opacity .5s, top .5s!important; */
+	padding-top:15px;
+	width: 720px !important;
+	margin: auto !important;
+}

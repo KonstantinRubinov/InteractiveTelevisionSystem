@@ -1,0 +1,8 @@
+<footer class="row">
+    <img src="../../../assets/images/footer_logotype.png" class="col-xs-12 col-sm-3 col-md-3 footer_logotype" alt="footer_logotype">
+    <div class="col-xs-12 col-sm-9 col-md-9 to_left_of_logotype row">
+        <ul *ngFor="let footerUlNavigator of footerUlNavigators; let i = index" class="col-md-5ths col-xs-6 right">
+            <li *ngFor="let c of footerUlNavigator"><a href="#">{{c}}</a></li>
+        </ul>
+    </div>
+  </footer>

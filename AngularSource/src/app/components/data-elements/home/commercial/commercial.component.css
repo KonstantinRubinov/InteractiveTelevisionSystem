@@ -1,0 +1,42 @@
+.commercials{
+	width:240px;
+	float:right;
+}
+
+.commercials_div{
+	display: flex;
+	background-color:#565656;
+	background: rgba(0, 0, 0, .20);
+	margin-bottom:20px;
+	width:100%;
+	transition: background .25s ease-in-out;
+   -moz-transition: background .25s ease-in-out;
+   -webkit-transition: background .25s ease-in-out;
+}
+
+.commercials_div:hover{
+	background-color:#565656;
+	background: rgba(0, 0, 0, .60);
+	cursor:pointer;
+}
+
+.commercials_text{
+	line-height: 140%;
+	font-family: FbAdrenalinRegular;
+	font-size:10pt;
+	text-shadow:0 0 0.2em #7F7F7F, 0 0 0.2em #7F7F7F;
+	padding-right: 20px;
+	padding-top: 15px;
+	color:#ffffff;
+	width:130px;
+	
+	/* border: 5px solid yellow; */
+	
+}
+
+.commercials_pic{
+	width:93px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/* border: 5px solid red; */
+}
